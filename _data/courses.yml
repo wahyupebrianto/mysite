@@ -1,0 +1,190 @@
+# ---------------------------------------------------------------------------
+# One entry per course.  The page at /teaching/<id>/ (and /id/teaching/<id>/)
+# is a tiny stub file that renders this data - see teaching/*.md.
+#
+# materials: add rows when you have real links, e.g.
+#   materials:
+#     - { title: { en: "Slides 1", id: "Slide 1" }, video: "https://youtu.be/...", url: "/assets/files/dl-01.pdf" }
+# Leave `materials: []` and the page shows a "materials will be added" note.
+# ---------------------------------------------------------------------------
+items:
+  - id: deep-learning
+    year: 2024
+    title: { en: "Introduction to Deep Learning", id: "Pengantar Deep Learning" }
+    summary:
+      en: "Neural networks, backpropagation, CNNs, RNNs and Transformers, with applications to computer vision and text."
+      id: "Jaringan saraf, backpropagation, CNN, RNN, dan Transformer, dengan penerapan pada computer vision dan data teks."
+    description:
+      en: "This course covers the fundamentals of deep learning, including neural networks, backpropagation, CNNs, RNNs, and their applications in computer vision and textual data."
+      id: "Mata kuliah ini membahas dasar-dasar deep learning, termasuk jaringan saraf, backpropagation, CNN, RNN, dan penerapannya dalam computer vision maupun data tekstual."
+    outline:
+      en:
+        - "Applied mathematics and machine learning basics"
+        - "History and introduction to neural networks"
+        - "Backpropagation"
+        - "Deep neural networks"
+        - "Convolutional neural networks"
+        - "Recurrent neural networks"
+        - "Transformers"
+        - "Practical methodology and applications"
+        - "Transfer learning"
+        - "Deep learning for image classification"
+        - "Deep learning for object detection"
+        - "Deep learning for object segmentation"
+        - "Deep learning in LLMs"
+        - "GPT"
+        - "Multimodal AI"
+        - "Deep learning research"
+      id:
+        - "Matematika terapan dan dasar machine learning"
+        - "Sejarah dan pengenalan neural networks"
+        - "Backpropagation"
+        - "Deep neural networks"
+        - "Convolutional neural networks"
+        - "Recurrent neural networks"
+        - "Transformer"
+        - "Metodologi praktis dan aplikasi"
+        - "Transfer learning"
+        - "Deep learning untuk klasifikasi citra"
+        - "Deep learning untuk deteksi objek"
+        - "Deep learning untuk segmentasi objek"
+        - "Deep learning pada LLM"
+        - "GPT"
+        - "Multimodal AI"
+        - "Riset deep learning"
+    materials: []
+
+  - id: data-mining
+    year: 2025
+    title: { en: "Data Mining", id: "Data Mining" }
+    summary:
+      en: "Extracting knowledge from large datasets with statistical and machine learning methods, using Python."
+      id: "Mengekstrak pengetahuan dari data berukuran besar dengan metode statistik dan machine learning, menggunakan Python."
+    description:
+      en: "This course teaches techniques for extracting knowledge from large amounts of data using statistical and machine learning methods."
+      id: "Mata kuliah ini mengajarkan teknik untuk mengekstrak pengetahuan dari data dalam jumlah besar menggunakan metode statistik dan machine learning."
+    outline:
+      en:
+        - "Basic concepts of data mining"
+        - "CRISP-DM: phases and tasks"
+        - "CRISP-DM: algorithms for data mining"
+        - "Data mining from a business perspective and statistics for data mining"
+        - "Introduction to data mining tools"
+        - "Data preparation for regression algorithms with Python"
+        - "Introduction to and application of regression with Python"
+        - "To be announced"
+        - "Data preparation for classification algorithms with Python"
+        - "Introduction to and application of Naive Bayes and SVM with Python"
+        - "Data preparation for clustering algorithms with Python"
+        - "Introduction to and application of KNN and K-Means with Python"
+        - "Data preparation for forecasting with Python"
+        - "Introduction to and application of ANOVA with Python"
+        - "Case study implementation"
+        - "To be announced"
+      id:
+        - "Konsep dasar data mining"
+        - "CRISP-DM: fase dan tugas"
+        - "CRISP-DM: algoritma untuk data mining"
+        - "Data mining dari perspektif bisnis dan statistik untuk data mining"
+        - "Pengenalan tools data mining"
+        - "Preparasi data untuk algoritma regresi dengan Python"
+        - "Pengenalan dan penerapan regresi dengan Python"
+        - "Akan diumumkan"
+        - "Preparasi data untuk algoritma klasifikasi dengan Python"
+        - "Pengenalan dan penerapan Naive Bayes dan SVM dengan Python"
+        - "Preparasi data untuk algoritma clustering dengan Python"
+        - "Pengenalan dan penerapan KNN dan K-Means dengan Python"
+        - "Preparasi data untuk forecasting dengan Python"
+        - "Pengenalan dan penerapan ANOVA dengan Python"
+        - "Implementasi studi kasus"
+        - "Akan diumumkan"
+    materials: []
+
+  - id: devops
+    year: 2026
+    title: { en: "DevOps", id: "DevOps" }
+    summary:
+      en: "Continuous delivery with CI/CD, containers, infrastructure as code, and monitoring for web and mobile applications."
+      id: "Penyebaran sistem berkelanjutan dengan CI/CD, container, infrastructure as code, dan monitoring untuk aplikasi web dan mobile."
+    description:
+      en: "This course teaches how to deploy systems continuously using CI/CD principles when developing web-based and mobile applications."
+      id: "Mata kuliah ini mengajarkan bagaimana cara menyebarkan sistem secara berkelanjutan dengan prinsip CI/CD dalam pengembangan aplikasi berbasis web maupun mobile."
+    outline:
+      en:
+        - "Introduction to DevOps and AWS cloud services"
+        - "Linux, web server configuration, deploying Laravel and Node.js"
+        - "Docker"
+        - "Building scalable applications"
+        - "Infrastructure as code: Terraform with Docker setup"
+        - "CI/CD tools: configuring Jenkins and deploying a Laravel app to a VPS with Jenkins"
+        - "Deploying a Laravel app to a VPS with other CI/CD tools (GitLab CI, GitHub Actions)"
+        - "Midterm exam"
+        - "Docker Swarm basics"
+        - "Deploying a Laravel app on Docker Swarm"
+        - "Docker Swarm horizontal autoscaling"
+        - "Adding an APM agent to a Laravel application"
+        - "Monitoring with Prometheus and Grafana"
+        - "Project"
+        - "Project"
+      id:
+        - "Pengenalan DevOps dan layanan cloud AWS"
+        - "Linux, konfigurasi web server, deploy Laravel dan Node.js"
+        - "Docker"
+        - "Pengembangan aplikasi yang scalable"
+        - "Infrastructure as code: Terraform dengan setup Docker"
+        - "CI/CD tools: konfigurasi Jenkins dan deploy aplikasi Laravel di VPS dengan Jenkins"
+        - "Deploy aplikasi Laravel di VPS dengan CI/CD tools lain (GitLab CI, GitHub Actions)"
+        - "UTS"
+        - "Dasar Docker Swarm"
+        - "Deploy aplikasi Laravel di Docker Swarm"
+        - "Horizontal autoscaling pada Docker Swarm"
+        - "Menambahkan APM agent untuk aplikasi Laravel"
+        - "Prometheus dan Grafana untuk monitoring"
+        - "Proyek"
+        - "Proyek"
+    materials: []
+
+  - id: siscer
+    year: 2024
+    title: { en: "Intelligent Systems", id: "Sistem Cerdas" }
+    summary:
+      en: "Problem identification, search, classification, fuzzy logic, NLP and expert systems, ending with an intelligent-systems project."
+      id: "Identifikasi masalah, pencarian, klasifikasi, logika fuzzy, NLP dan sistem pakar, ditutup dengan proyek sistem cerdas."
+    description:
+      en: "This course covers intelligent systems: identifying problems, knowledge representation and search algorithms, classification, fuzzy logic for decision support, NLP and expert systems, and a course project."
+      id: "Mata kuliah ini membahas sistem cerdas: identifikasi masalah, representasi pengetahuan dan algoritma pencarian, klasifikasi, logika fuzzy untuk sistem pendukung keputusan, NLP dan sistem pakar, serta proyek mata kuliah."
+    outline:
+      en:
+        - "Introduction to intelligent systems and how to identify problems"
+        - "Knowledge representation and search algorithms"
+        - "Classification: K-Means clustering and Naive Bayes"
+        - "Classification: SVM and decision trees"
+        - "Perceptron and exponential smoothing"
+        - "Fuzzy logic and SAW for decision support systems"
+        - "NLP and expert systems"
+        - "Project"
+        - "Pruning and ensemble learning"
+        - "CNN"
+        - "GPT"
+        - "Intelligent systems project"
+        - "Intelligent systems project"
+        - "Intelligent systems project"
+        - "Intelligent systems project"
+      id:
+        - "Pengenalan sistem cerdas dan cara identifikasi masalah"
+        - "Representasi pengetahuan dan algoritma pencarian"
+        - "Klasifikasi: K-Means clustering dan Naive Bayes"
+        - "Klasifikasi: SVM dan decision tree"
+        - "Perceptron dan exponential smoothing"
+        - "Logika fuzzy dan SAW untuk SPK"
+        - "NLP dan sistem pakar"
+        - "Proyek"
+        - "Pruning dan ensemble learning"
+        - "CNN"
+        - "GPT"
+        - "Proyek sistem cerdas"
+        - "Proyek sistem cerdas"
+        - "Proyek sistem cerdas"
+        - "Proyek sistem cerdas"
+    materials:
+        - { title: { en: "Slides 1", id: "Slide 1" }, video: "https://youtu.be/...", url: "/assets/files/siscer-01.pdf" }

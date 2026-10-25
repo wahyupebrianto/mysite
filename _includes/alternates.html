@@ -1,0 +1,25 @@
+{%- comment -%}
+  Finds the translation of the current page (same `ref:`, other `lang:`).
+  Provides: alt_url (where the language switcher points) and alt_exact
+  (true when a real translation exists, so we may emit hreflang).
+{%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign alt_url = "" -%}
+{%- assign alt_exact = false -%}
+{%- if page.ref -%}
+  {%- assign pool = site.pages | concat: site.documents -%}
+  {%- assign alt = pool | where: "ref", page.ref | where: "lang", other_lang | first -%}
+  {%- if alt -%}
+    {%- assign alt_url = alt.url -%}
+    {%- assign alt_exact = true -%}
+  {%- endif -%}
+{%- endif -%}
+{%- unless alt_exact -%}
+  {%- if other_lang == "id" -%}
+    {%- assign alt_url = "/id/" -%}
+    {%- if page.layout == "post" -%}{%- assign alt_url = "/id/blog/" -%}{%- endif -%}
+  {%- else -%}
+    {%- assign alt_url = "/" -%}
+    {%- if page.layout == "post" -%}{%- assign alt_url = "/blog/" -%}{%- endif -%}
+  {%- endif -%}
+{%- endunless -%}

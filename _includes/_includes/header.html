@@ -1,0 +1,44 @@
+{%- include i18n.html -%}
+{%- include alternates.html -%}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ lang_prefix | append: '/' | relative_url }}">{{ site.title }}</a>
+
+    <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="{{ t.menu }}">
+      <span class="when-closed">{% include icon.html name="menu" %}</span>
+      <span class="when-open">{% include icon.html name="close" %}</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="{{ t.nav_label }}">
+      <ul class="nav-list">
+        {%- for item in site.data.navigation.items -%}
+          {%- if item.enabled -%}
+            {%- assign subs = "" | split: "" -%}
+            {%- if item.id == "research" -%}
+              {%- assign subs = site.data.research.themes | where: "ready", true -%}
+            {%- endif %}
+        <li class="nav-item{% if subs.size > 0 %} has-sub{% endif %}">
+          <a class="nav-link" href="{{ lang_prefix | append: item.path | relative_url }}"{% if page.nav_id == item.id %} aria-current="page"{% endif %}>{{ item.label[lang] }}</a>
+          {%- if subs.size > 0 %}
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-{{ item.id }}" aria-label="{{ t.open_submenu }}: {{ item.label[lang] }}">{% include icon.html name="chevron" %}</button>
+          <ul class="sub-list" id="sub-{{ item.id }}">
+            {%- for theme in subs %}
+            <li><a href="{{ lang_prefix | append: item.path | append: theme.id | append: '/' | relative_url }}"{% if page.theme == theme.id %} aria-current="page"{% endif %}>{{ theme.menu[lang] }}</a></li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </li>
+          {%- endif -%}
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="lang-switch" href="{{ alt_url | relative_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" title="{{ t.other_language_name }}">{{ other_lang | upcase }}<span class="sr-only"> – {{ t.other_language_name }}</span></a>
+      <button class="icon-btn theme-toggle" type="button" aria-label="{{ t.toggle_theme }}" title="{{ t.toggle_theme }}">
+        <span class="when-light">{% include icon.html name="moon" %}</span>
+        <span class="when-dark">{% include icon.html name="sun" %}</span>
+      </button>
+    </div>
+  </div>
+</header>

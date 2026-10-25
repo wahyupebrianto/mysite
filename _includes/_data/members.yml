@@ -1,0 +1,22 @@
+# ---------------------------------------------------------------------------
+# Lab members / supervised students.  Empty lists = the page shows a
+# "coming soon" note.  Remember to set `enabled: true` for `members` in
+# navigation.yml when you are ready.
+#
+# Example entry (uncomment and edit):
+#
+# current:
+#   - name: "Name Surname"
+#     level: master            # master | undergraduate
+#     topic: "Thesis title or topic"
+#     years: "2025–2026"
+#     note: "Short description of the project."
+# alumni:
+#   - name: "Name Surname"
+#     level: undergraduate
+#     topic: "Final project title"
+#     years: "2023–2024"
+#     note: "Now at ..."
+# ---------------------------------------------------------------------------
+current: []
+alumni: []

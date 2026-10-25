@@ -1,0 +1,53 @@
+# ---------------------------------------------------------------------------
+# Who you are.  Edit here; every page picks it up.
+# Leave a social link empty ("") and its icon is hidden automatically.
+# ---------------------------------------------------------------------------
+name: Wahyu Pebrianto
+photo: /assets/images/photo.jpg
+photo_width: 480
+photo_height: 480
+photo_alt:
+  en: Portrait of Wahyu Pebrianto
+  id: Foto Wahyu Pebrianto
+
+role:
+  en: Lecturer & Researcher
+  id: Dosen & Peneliti
+affiliation:
+  en: Department of Information Technology, Jember State Polytechnic, Indonesia
+  id: Jurusan Teknologi Informasi, Politeknik Negeri Jember, Indonesia
+
+# Paragraphs support Markdown (links, emphasis).
+bio:
+  en:
+    - "Wahyu Pebrianto is a researcher and lecturer in the Department of Information Technology at [Jember State Polytechnic](https://www.polije.ac.id/), Indonesia. His current research interests include Deep Learning, Computer Vision, and Multimodal AI."
+    - "He received his Master's degree in Electrical Engineering, majoring in Systems of Communication and Informatics, from [University of Brawijaya](https://www.ub.ac.id/), Indonesia, in 2023, under the guidance of Assoc. Prof. Panca Mudjirahardjo and Prof. Sholeh Hadi Pramono."
+    - "Earlier in his career he worked as a Software Engineer at Soluta and Forendsmith (2018–2019), and as an Artificial Intelligence Engineer specializing in Deep Learning for Computer Vision at PT Super Giga Generasi (from 2021). In 2024 he joined Jember State Polytechnic as a lecturer."
+  id:
+    - "Wahyu Pebrianto adalah peneliti dan dosen di Jurusan Teknologi Informasi, [Politeknik Negeri Jember](https://www.polije.ac.id/), Indonesia. Minat penelitiannya saat ini meliputi Deep Learning, Computer Vision, dan Multimodal AI."
+    - "Ia meraih gelar Magister Teknik Elektro, peminatan Sistem Komunikasi dan Informatika, dari [Universitas Brawijaya](https://www.ub.ac.id/), Indonesia, pada 2023, di bawah bimbingan Assoc. Prof. Panca Mudjirahardjo dan Prof. Sholeh Hadi Pramono."
+    - "Sebelumnya ia bekerja sebagai Software Engineer di Soluta dan Forendsmith (2018–2019), serta sebagai Artificial Intelligence Engineer yang berfokus pada Deep Learning untuk Computer Vision di PT Super Giga Generasi (sejak 2021). Pada 2024 ia bergabung dengan Politeknik Negeri Jember sebagai dosen."
+
+keywords:
+  - - { name: "Deep Learning", url: "https://en.wikipedia.org/wiki/Deep_learning" }
+    - { name: "Computer Vision", url: "https://en.wikipedia.org/wiki/Computer_vision" }
+    - { name: "Image Classification", url: "https://en.wikipedia.org/wiki/Contextual_image_classification" }
+    - { name: "Object Detection", url: "https://en.wikipedia.org/wiki/Object_detection" }
+    - { name: "Object Segmentation", url: "https://en.wikipedia.org/wiki/Image_segmentation" }
+  - - { name: "Generative AI", url: "https://en.wikipedia.org/wiki/Generative_artificial_intelligence" }
+    - { name: "Vision-language model", url: "https://en.wikipedia.org/wiki/Vision-language_model" }
+    - { name: "Diffusion model", url: "https://en.wikipedia.org/wiki/Diffusion_model" }
+
+# Path to a CV PDF (e.g. /assets/files/cv.pdf).  Empty = the CV link is hidden.
+cv: ""
+
+social:
+  github: "https://github.com/wahyupebrianto"
+  scholar: "https://scholar.google.com/citations?user=Q0lW17sAAAAJ&hl=en"      # https://scholar.google.com/citations?user=XXXX
+  youtube: "https://www.youtube.com/@wahyupebrianto1989"      # https://www.youtube.com/@channel
+  linkedin: "https://www.linkedin.com/in/wahyu-pebrianto-9428b7155/"     # https://www.linkedin.com/in/...
+email: wahyu.pebrianto1@gmail.com
+show_email: false  # true = show a mail icon in the footer / home page
+
+# Social preview image used by Facebook, LinkedIn, WhatsApp, X, ...
+og_image: /assets/images/og-default.png

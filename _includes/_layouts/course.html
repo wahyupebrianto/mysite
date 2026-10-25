@@ -1,0 +1,40 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- assign course = site.data.courses.items | where: "id", page.course | first -%}
+<article class="page prose">
+  <p class="eyebrow"><a href="{{ lang_prefix | append: '/teaching/' | relative_url }}">&larr; {{ t.teaching }}</a></p>
+  <h1 class="page-title">{{ course.title[lang] }}</h1>
+  <p class="post-meta">{{ course.year }} · {{ site.data.profile.name }}</p>
+
+  <h2>{{ t.description }}</h2>
+  <p>{{ course.description[lang] }}</p>
+
+  <h2>{{ t.outline }}</h2>
+  <ol class="outline">
+    {%- for topic in course.outline[lang] %}
+    <li>{{ topic }}</li>
+    {%- endfor %}
+  </ol>
+
+  <h2>{{ t.materials }}</h2>
+  {%- if course.materials.size > 0 %}
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>{{ t.topic_col }}</th><th>{{ t.video }}</th><th>{{ t.file }}</th></tr></thead>
+      <tbody>
+        {%- for m in course.materials %}
+        <tr>
+          <td>{{ m.title[lang] }}</td>
+          <td>{% if m.video and m.video != "" %}<a href="{{ m.video }}" rel="noopener">{{ t.video }}</a>{% endif %}</td>
+          <td>{% if m.url and m.url != "" %}<a href="{{ m.url | relative_url }}">{{ t.file }}</a>{% endif %}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+  {%- else %}
+  <p class="notice">{{ t.materials_soon }}</p>
+  {%- endif %}
+</article>

@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- include alternates.html -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 200.0 | ceil -%}
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post-header">
+    <p class="eyebrow"><a href="{{ lang_prefix | append: '/blog/' | relative_url }}">&larr; {{ t.blog }}</a></p>
+    <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{% include date-fmt.html date=page.date %}</time>
+      · {{ minutes }} {{ t.min_read }}
+      {%- if page.categories.size > 0 %} · {{ page.categories | join: ", " }}{% endif %}
+    </p>
+  </header>
+
+  <div class="post-content prose" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    {%- if page.tags.size > 0 %}
+    <ul class="chips" aria-label="{{ t.tags }}">
+      {%- for tag in page.tags %}
+      <li><span>#{{ tag }}</span></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+    {%- if page.cite %}
+    {% include cite.html %}
+    {%- endif %}
+    {%- if alt_exact %}
+    <p class="notice">{{ t.also_available }} <a href="{{ alt_url | relative_url }}" hreflang="{{ other_lang }}">{{ t.other_language_name }}</a>.</p>
+    {%- endif %}
+    <p><a href="{{ lang_prefix | append: '/blog/' | relative_url }}">&larr; {{ t.back_to_blog }}</a></p>
+  </footer>
+</article>

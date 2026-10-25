@@ -1,0 +1,12 @@
+# ---------------------------------------------------------------------------
+# Curated links.  Empty list = "coming soon" note.  Enable the `links` item in
+# navigation.yml when ready.
+#
+# groups:
+#   - title: { en: "Research tools", id: "Perangkat riset" }
+#     items:
+#       - title: "PyTorch"
+#         url: "https://pytorch.org"
+#         description: { en: "Deep learning framework.", id: "Framework deep learning." }
+# ---------------------------------------------------------------------------
+groups: []

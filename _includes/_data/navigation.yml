@@ -1,0 +1,35 @@
+# ---------------------------------------------------------------------------
+# Main menu.  `enabled: false` hides the item from the menu AND makes its page
+# `noindex` + removes it from sitemap.xml.  Flip to `true` once it has content.
+# Order here = order in the menu.  `path` is the English path; the Indonesian
+# version is automatically /id + path.
+# ---------------------------------------------------------------------------
+items:
+  - id: home
+    path: /
+    enabled: true
+    label: { en: About, id: Tentang }
+  - id: research
+    path: /research/
+    enabled: true
+    label: { en: Research, id: Riset }
+  - id: teaching
+    path: /teaching/
+    enabled: true
+    label: { en: Teaching, id: Pengajaran }
+  - id: members
+    path: /members/
+    enabled: false
+    label: { en: Members, id: Anggota }
+  - id: blog
+    path: /blog/
+    enabled: true
+    label: { en: Blog, id: Blog }
+  - id: publications
+    path: /publications/
+    enabled: true
+    label: { en: Publications, id: Publikasi }
+  - id: links
+    path: /links/
+    enabled: false
+    label: { en: Links, id: Tautan }

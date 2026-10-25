@@ -1,0 +1,28 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+<div class="page">
+  <h1 class="page-title">{{ page.title }}</h1>
+  <img class="research-logo" src="{{ '/assets/images/wahyulab-logo.webp' | relative_url }}" width="640" height="640" alt="{{ t.logo_alt }}" loading="lazy">
+  <div class="prose">{{ content }}</div>
+
+  <h2 class="section-title">{{ t.research_themes }}</h2>
+  <ul class="card-grid">
+    {%- for theme in site.data.research.themes -%}
+      {%- if theme.listed != false %}
+    <li class="card">
+      {%- if theme.ready %}
+      <h3 class="card-title"><a href="{{ lang_prefix | append: '/research/' | append: theme.id | append: '/' | relative_url }}">{{ theme.title[lang] }}</a></h3>
+      {%- else %}
+      <h3 class="card-title">{{ theme.title[lang] }}</h3>
+      {%- endif %}
+      <p>{{ theme.summary[lang] }}</p>
+      {%- unless theme.ready %}
+      <p><span class="badge">{{ t.in_preparation }}</span></p>
+      {%- endunless %}
+    </li>
+      {%- endif -%}
+    {%- endfor %}
+  </ul>
+</div>

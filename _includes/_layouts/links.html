@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- assign groups = site.data.links.groups -%}
+<div class="page prose">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {{ content }}
+  {%- if groups.size == 0 %}
+  <p class="notice">{{ t.coming_soon_text }}</p>
+  {%- else -%}
+    {%- for group in groups %}
+  <h2>{{ group.title[lang] }}</h2>
+  <ul>
+      {%- for link in group.items %}
+    <li><a href="{{ link.url }}" rel="noopener">{{ link.title }}</a>{% if link.description %} – {{ link.description[lang] }}{% endif %}</li>
+      {%- endfor %}
+  </ul>
+    {%- endfor -%}
+  {%- endif %}
+</div>

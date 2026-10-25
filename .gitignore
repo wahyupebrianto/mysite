@@ -1,0 +1,19 @@
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Ruby / Bundler
+.bundle/
+vendor/
+
+# Editors, OS, secrets
+node_modules/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+.continue/
+.vscode/
+.idea/

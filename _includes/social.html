@@ -1,0 +1,15 @@
+{%- comment -%} Social icons from _data/profile.yml (empty links are skipped). {%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign social = site.data.profile.social -%}
+{%- assign social_keys = "github,scholar,youtube,linkedin" | split: "," -%}
+<ul class="social-list">
+  {%- for key in social_keys -%}
+    {%- assign link = social[key] -%}
+    {%- if link and link != "" %}
+  <li><a class="social-link" href="{{ link }}" rel="me noopener" title="{{ t.social[key] }}">{% include icon.html name=key %}<span class="sr-only">{{ t.social[key] }}</span></a></li>
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if site.data.profile.show_email %}
+  <li><a class="social-link" href="mailto:{{ site.data.profile.email }}" title="{{ t.social.email }}">{% include icon.html name="mail" %}<span class="sr-only">{{ t.social.email }}</span></a></li>
+  {%- endif %}
+</ul>

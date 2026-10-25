@@ -1,0 +1,20 @@
+{%- comment -%}
+  Builds `visible_posts` for the current language: every post written in this
+  language, plus posts in the other language that have no translation yet
+  (they get a language badge in the list).
+{%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign visible_posts = "" | split: "" -%}
+{%- for p in site.posts -%}
+  {%- if p.lang == lang -%}
+    {%- assign visible_posts = visible_posts | push: p -%}
+  {%- else -%}
+    {%- assign translated = 0 -%}
+    {%- if p.ref -%}
+      {%- assign translated = site.posts | where: "ref", p.ref | where: "lang", lang | size -%}
+    {%- endif -%}
+    {%- if translated == 0 -%}
+      {%- assign visible_posts = visible_posts | push: p -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

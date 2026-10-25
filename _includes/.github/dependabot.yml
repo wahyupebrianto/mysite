@@ -1,0 +1,12 @@
+# Weekly pull requests that bump Ruby gems and GitHub Actions versions, so the
+# site keeps building years from now without surprises.
+version: 2
+updates:
+  - package-ecosystem: bundler
+    directory: "/"
+    schedule:
+      interval: weekly
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly

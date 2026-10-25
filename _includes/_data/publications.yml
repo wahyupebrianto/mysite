@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# One entry per publication.  Add new ones at the end - the page sorts them
+# by type and year automatically.
+#   type: journal | conference | preprint | under_review
+#   authors: list (your own name is bolded automatically)
+# ---------------------------------------------------------------------------
+- type: journal
+  year: 2024
+  title: "Efficient batch size detection of apple fruit in a plantation environment"
+  authors: ["Wahyu Pebrianto", "Ahmad Hoirul Basori", "Hendra Yufit Riskiawan", "et al."]
+  venue: "International Journal of ADVANCED AND APPLIED SCIENCES (IJAAS)"
+  url: "https://www.science-gate.com/IJAAS/2024/V11I9/1021833ijaas202409017.html"
+
+- type: journal
+  year: 2024
+  title: "Partial half fine-tuning for object detection with unmanned aerial vehicles"
+  authors: ["Wahyu Pebrianto", "Panca Mudjirahardjo", "Sholeh Hadi Pramono"]
+  venue: "IAES International Journal of Artificial Intelligence (IJ-AI)"
+  url: "https://ijai.iaescore.com/index.php/IJAI/article/view/22623"
+
+- type: conference
+  year: 2022
+  title: "YOLO method analysis and comparison for real-time human face detection"
+  authors: ["Wahyu Pebrianto", "Panca Mudjirahardjo", "Sholeh Hadi Pramono"]
+  venue: "Electrical Power, Electronics, Communications, Controls and Informatics Seminar (EECCIS)"
+  url: "https://ieeexplore.ieee.org/abstract/document/9902919/"
+
+- type: conference
+  year: 2019
+  title: "Designing a Python based text pre-processing application for text classification"
+  authors: ["Hermawan Arief Putranto", "Taufiq Rizaldi", "Wahyu Kurnia Dewanto", "Wahyu Pebrianto"]
+  venue: "ICoFA 2019"
+  url: "https://publikasi.polije.ac.id/ProceedingICOFA/article/view/1823"
+
+- type: preprint
+  year: 2023
+  title: "YOLOv3 with spatial pyramid pooling for object detection with unmanned aerial vehicles"
+  authors: ["Wahyu Pebrianto", "Panca Mudjirahardjo", "Sholeh Hadi Pramono", "Rahmadwati", "Raden Arief Setyawan"]
+  venue: "arXiv"
+  url: "https://arxiv.org/abs/2305.12344"
+
+- type: under_review
+  year: 2026
+  title: "Prompt conditioned synthetic waste data generation using diffusion models and low-rank adaptation"
+  authors: ["Wahyu Pebrianto", "Panca Mudjirahardjo", "Sholeh Hadi Pramono", "Mahdin Rohmatillah"]
+  venue: ""
+  url: ""

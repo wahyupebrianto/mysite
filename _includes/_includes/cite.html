@@ -1,0 +1,31 @@
+{%- comment -%}
+  "How to cite" box for a post (enabled with `cite: true` in the front matter).
+  The IEEE text and BibTeX are generated from the post's own title, date and URL,
+  so they never go out of date.  Usage: {% include cite.html %}
+{%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign lb = "{" -%}
+{%- assign rb = "}" -%}
+{%- assign cite_url = page.url | absolute_url -%}
+{%- assign cite_month = page.date | date: "%-m" | minus: 1 -%}
+{%- assign cite_title = page.title | strip_html | normalize_whitespace -%}
+{%- assign cite_key = page.ref | default: page.slug | replace: "-", "" -%}
+<section class="cite" aria-labelledby="cite-title">
+  <h2 id="cite-title" class="cite-title">{{ t.cite_title }}</h2>
+  <p class="muted">{{ t.cite_hint }}</p>
+  <div class="cite-block">
+    <p class="cite-label">{{ t.cite_ieee }} <button type="button" class="copy-btn" data-copy="cite-ieee" data-copied="{{ t.copied }}" hidden>{{ t.copy }}</button></p>
+    <pre><code id="cite-ieee">{{ site.data.profile.name | split: " " | first | slice: 0 }}. {{ site.data.profile.name | split: " " | last }}, "{{ cite_title }}," {{ site.title }}, {{ t.months_ieee[cite_month] }} {{ page.date | date: "%-d, %Y" }}. [Online]. Available: {{ cite_url }}</code></pre>
+  </div>
+  <div class="cite-block">
+    <p class="cite-label">{{ t.cite_bibtex }} <button type="button" class="copy-btn" data-copy="cite-bibtex" data-copied="{{ t.copied }}" hidden>{{ t.copy }}</button></p>
+    <pre><code id="cite-bibtex">@misc{{ lb }}pebrianto{{ page.date | date: "%Y" }}{{ cite_key }},
+  author = {{ lb }}Pebrianto, Wahyu{{ rb }},
+  title = {{ lb }}{{ cite_title | replace: "&", "\&" }}{{ rb }},
+  year = {{ lb }}{{ page.date | date: "%Y" }}{{ rb }},
+  month = {{ lb }}{{ page.date | date: "%b" | downcase }}{{ rb }},
+  howpublished = {{ lb }}\url{{ lb }}{{ cite_url }}{{ rb }}{{ rb }},
+  note = {{ lb }}Blog post{{ rb }}
+{{ rb }}</code></pre>
+  </div>
+</section>

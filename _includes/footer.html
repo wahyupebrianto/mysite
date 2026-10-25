@@ -1,0 +1,11 @@
+{%- include i18n.html -%}
+<footer class="site-footer">
+  <div class="container footer-inner">
+    {% include social.html %}
+    <p class="footer-text">
+      &copy; {{ site.time | date: "%Y" }} {{ site.data.profile.name }}
+      · <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      · {{ t.built_with }} <a href="https://jekyllrb.com/" rel="noopener">Jekyll</a>
+    </p>
+  </div>
+</footer>

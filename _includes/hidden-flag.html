@@ -1,0 +1,15 @@
+{%- comment -%}
+  Sets `hidden` to true when a page should not be indexed: either it asks for
+  it (noindex: true), or its menu item is disabled in _data/navigation.yml, or
+  it is a research theme that is not `ready` in _data/research.yml.
+  Usage: {% include hidden-flag.html item=page %}
+{%- endcomment -%}
+{%- assign hidden = include.item.noindex | default: false -%}
+{%- if include.item.nav_id -%}
+  {%- assign nav_entry = site.data.navigation.items | where: "id", include.item.nav_id | first -%}
+  {%- if nav_entry and nav_entry.enabled == false -%}{%- assign hidden = true -%}{%- endif -%}
+{%- endif -%}
+{%- if include.item.theme -%}
+  {%- assign theme_entry = site.data.research.themes | where: "id", include.item.theme | first -%}
+  {%- if theme_entry and theme_entry.ready != true -%}{%- assign hidden = true -%}{%- endif -%}
+{%- endif -%}

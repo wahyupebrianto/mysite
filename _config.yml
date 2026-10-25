@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------
+# Site settings.  Personal data (bio, social links, publications, courses ...)
+# lives in _data/*.yml - this file only holds technical settings.
+# ---------------------------------------------------------------------------
+title: Wahyu Pebrianto
+url: "https://wahyupebrianto.github.io"   # no trailing slash
+baseurl: ""                               # "" because this is a user site (username.github.io)
+lang: en                                  # default language; Indonesian pages live under /id/
+timezone: Asia/Jakarta
+
+# Keep a stable, language-prefixed URL scheme.  Posts normally set their own
+# `permalink:` (see README); this is only the fallback.
+permalink: /blog/:year/:month/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: plaintext
+
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+
+feed:
+  path: feed.xml
+
+# Never publish these (anything starting with _ or . is already excluded).
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - figures-src
+  - vendor
+  - node_modules
+  - .github
+  - .ruby-version
+
+# Fail loudly on broken front matter instead of silently skipping files.
+strict_front_matter: true
+
+defaults:
+  # --- every page: English by default, then override for /id/ -----------------
+  - scope: { path: "" }
+    values: { lang: en }
+  - scope: { path: "id" }
+    values: { lang: id }
+  # --- posts -------------------------------------------------------------
+  - scope: { path: "", type: posts }
+    values:
+      layout: post
+      nav_id: blog
+      author: Wahyu Pebrianto

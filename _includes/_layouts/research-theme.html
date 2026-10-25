@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- assign theme = site.data.research.themes | where: "id", page.theme | first -%}
+<article class="page prose">
+  <p class="eyebrow"><a href="{{ lang_prefix | append: '/research/' | relative_url }}">&larr; {{ t.research }}</a></p>
+  <h1 class="page-title">{{ theme.title[lang] }}</h1>
+  {{ theme.body[lang] | markdownify }}
+  {%- if theme.topics[lang].size > 0 %}
+  <ul>
+    {%- for topic in theme.topics[lang] %}
+    <li>{{ topic }}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+  {{ content }}
+  {%- unless theme.ready %}
+  <p class="notice">{{ t.coming_soon_text }}</p>
+  {%- endunless %}
+</article>

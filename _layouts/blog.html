@@ -1,0 +1,52 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- assign intro = content | strip -%}
+{%- include visible-posts.html -%}
+<div class="page">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {%- if intro != "" %}
+  <div class="prose">{{ intro }}</div>
+  {%- endif %}
+
+  {%- assign cats = "" | split: "" -%}
+  {%- for p in visible_posts -%}
+    {%- for c in p.categories -%}
+      {%- assign cats = cats | push: c -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- assign cats = cats | uniq | sort %}
+
+  {%- if cats.size > 1 %}
+  <div class="filters" role="group" aria-label="{{ t.filter_label }}" hidden>
+    <button type="button" class="chip-btn" data-filter="" aria-pressed="true">{{ t.all }}</button>
+    {%- for c in cats %}
+    <button type="button" class="chip-btn" data-filter="{{ c }}" aria-pressed="false">{{ c }}</button>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+
+  {%- if visible_posts.size == 0 %}
+  <p class="muted">{{ t.no_posts }}</p>
+  {%- else %}
+    {%- assign current_year = "" -%}
+    {%- for p in visible_posts -%}
+      {%- assign y = p.date | date: "%Y" -%}
+      {%- if y != current_year -%}
+        {%- unless forloop.first %}
+    </ul>
+  </section>
+        {%- endunless %}
+  <section class="year-group">
+    <h2 class="year-title">{{ y }}</h2>
+    <ul class="post-list">
+        {%- assign current_year = y -%}
+      {%- endif %}
+      {% include post-item.html post=p %}
+    {%- endfor %}
+    </ul>
+  </section>
+  <p class="muted filter-empty" hidden>{{ t.no_posts }}</p>
+  {%- endif %}
+</div>

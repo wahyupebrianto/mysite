@@ -1,0 +1,62 @@
+# ---------------------------------------------------------------------------
+# Research themes.
+#   ready: false  -> theme page is hidden from the menu, is `noindex`, and is
+#                    not linked from the Research overview (card is shown
+#                    without a link).  Set `ready: true` once it has content.
+#   listed: false -> theme is not even shown as a card on the overview.
+# The page stubs live in research/*.md and id/research/*.md.
+# ---------------------------------------------------------------------------
+themes:
+  - id: deep-learning-computer-vision
+    ready: false
+    listed: true
+    title: { en: "Deep Learning for Computer Vision", id: "Deep Learning untuk Computer Vision" }
+    menu:  { en: "Deep Learning for Computer Vision", id: "Deep Learning untuk Computer Vision" }
+    summary:
+      en: "Classical and modern deep learning methods for understanding visual data such as images and videos."
+      id: "Metode deep learning klasik dan modern untuk memahami data visual seperti citra dan video."
+    body:
+      en: "This research theme covers classical and modern deep learning methods for understanding visual data, including images and videos, with applications to:"
+      id: "Tema riset ini mencakup metode deep learning klasik dan modern untuk memahami data visual, termasuk citra dan video, dengan penerapan pada:"
+    topics:
+      en: ["Image classification", "Object detection", "Semantic and instance segmentation", "Video understanding and activity recognition"]
+      id: ["Klasifikasi citra", "Deteksi objek", "Segmentasi semantik dan instans", "Pemahaman video dan pengenalan aktivitas"]
+
+  - id: multimodal-generative-ai
+    ready: false
+    listed: true
+    title: { en: "Multimodal Generative AI", id: "Generative AI Multimodal" }
+    menu:  { en: "Multimodal Generative AI", id: "Generative AI Multimodal" }
+    summary:
+      en: "Models that combine several modalities (image, text, possibly audio or video) and modern generative approaches."
+      id: "Model yang menggabungkan beberapa modalitas (citra, teks, mungkin audio atau video) serta pendekatan generatif modern."
+    body:
+      en: "This research theme focuses on models that combine multiple modalities (image, text, possibly audio or video) and on modern **generative** approaches."
+      id: "Tema riset ini berfokus pada model yang menggabungkan beberapa modalitas (citra, teks, mungkin audio atau video) serta pendekatan **generatif** modern."
+    topics: { en: [], id: [] }
+
+  - id: neuromorphic-spiking-neural-networks
+    ready: false
+    listed: true
+    title: { en: "Neuromorphic: Spiking Neural Networks", id: "Neuromorphic: Spiking Neural Networks" }
+    menu:  { en: "Spiking Neural Networks", id: "Spiking Neural Networks" }
+    summary:
+      en: "Event-based sensors, spiking neural networks, and neuromorphic computing for efficient perception and control."
+      id: "Sensor berbasis kejadian (event-based), spiking neural networks, dan komputasi neuromorphic untuk persepsi dan kontrol yang efisien."
+    body:
+      en: "This theme focuses on **event-based sensors**, **spiking neural networks (SNNs)**, and neuromorphic computing for efficient perception and control."
+      id: "Tema ini berfokus pada **sensor berbasis kejadian (event-based)**, **spiking neural networks (SNN)**, dan komputasi neuromorphic untuk persepsi dan kontrol yang efisien."
+    topics: { en: [], id: [] }
+
+  - id: other-topics
+    ready: false
+    listed: false
+    title: { en: "Other Research Topics", id: "Topik Riset Lainnya" }
+    menu:  { en: "Others", id: "Lainnya" }
+    summary:
+      en: "Additional topics that do not fit the main themes."
+      id: "Topik tambahan yang tidak termasuk tema utama."
+    body:
+      en: "Additional research topics that do not fit the main themes will be collected here."
+      id: "Topik riset tambahan yang tidak termasuk tema utama akan dikumpulkan di sini."
+    topics: { en: [], id: [] }

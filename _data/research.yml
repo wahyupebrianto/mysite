@@ -1,0 +1,62 @@
+# ---------------------------------------------------------------------------
+# Research themes.
+#   ready: false  -> theme page is hidden from the menu, is `noindex`, and is
+#                    not linked from the Research overview (card is shown
+#                    without a link).  Set `ready: true` once it has content.
+#   listed: false -> theme is not even shown as a card on the overview.
+# The page stubs live in research/*.md and id/research/*.md.
+# ---------------------------------------------------------------------------
+themes:
+  - id: deep-learning-computer-vision
+    ready: false
+    listed: true
+    title: { en: "Deep Learning for Computer Vision", id: "Deep Learning untuk Computer Vision" }
+    menu:  { en: "Deep Learning for Computer Vision", id: "Deep Learning untuk Computer Vision" }
+    summary:
+      en: "Classical and modern deep learning methods for understanding visual data such as images and videos."
+      id: "Metode deep learning klasik dan modern untuk memahami data visual seperti citra dan video."
+    body:
+      en: "This research theme covers classical and modern deep learning methods for understanding visual data, including images and videos, with applications to:"
+      id: "Tema riset ini mencakup metode deep learning klasik dan modern untuk memahami data visual, termasuk citra dan video, dengan penerapan pada:"
+    topics:
+      en: ["Image classification", "Object detection", "Semantic and instance segmentation", "Video understanding and activity recognition"]
+      id: ["Klasifikasi citra", "Deteksi objek", "Segmentasi semantik dan instans", "Pemahaman video dan pengenalan aktivitas"]
+
+  - id: multimodal-ai
+    ready: false
+    listed: true
+    title: { en: "Multimodal AI", id: "AI Multimodal" }
+    menu:  { en: "Multimodal AI", id: "AI Multimodal" }
+    summary:
+      en: "Models that combine several modalities (image, text, possibly audio or video)."
+      id: "Model yang menggabungkan beberapa modalitas (citra, teks, mungkin audio atau video)."
+    body:
+      en: "This research theme focuses on models that combine multiple modalities (image, text, possibly audio or video) and on modern approaches."
+      id: "Tema riset ini berfokus pada model yang menggabungkan beberapa modalitas (citra, teks, mungkin audio atau video) serta pendekatan modern."
+    topics: { en: [], id: [] }
+
+  - id: human-activity-recognition
+    ready: false 
+    listed: true
+    title: { en: "Human Activity Recognition", id: "Pengenalan Aktivitas Manusia" }
+    menu: { en: "Human Activity Recognition", id: "Human Activity Recognition" }
+    summary:
+    en: "Advancing human activity recognition through vision-based systems, wearable sensors, LLM reasoning, and multimodal AI orchestration."
+    id: "Memajukan pengenalan aktivitas manusia melalui sistem berbasis visi, sensor mandiri, penalaran LLM, dan orkestrasi AI multimodal."
+    body:
+    en: "This theme focuses on Human Activity Recognition (HAR) across diverse modalities. We explore vision-based tracking, sensor-based analytics, LLM-driven behavioral reasoning, and multimodal AI architectures to build robust, context-aware systems for action comprehension."
+    id: "Tema ini berfokus pada Pengenalan Aktivitas Manusia (HAR) di berbagai modalitas. Kami mengeksplorasi pelacakan berbasis visi, analitik berbasis sensor, penalaran perilaku berbasis LLM, dan arsitektur AI multimodal untuk membangun sistem sadar-konteks yang tangguh dalam memahami tindakan."
+    topics: { en: [], id: [] }
+
+  - id: other-topics
+    ready: false
+    listed: false
+    title: { en: "Other Research Topics", id: "Topik Riset Lainnya" }
+    menu:  { en: "Others", id: "Lainnya" }
+    summary:
+      en: "Additional topics that do not fit the main themes."
+      id: "Topik tambahan yang tidak termasuk tema utama."
+    body:
+      en: "Additional research topics that do not fit the main themes will be collected here."
+      id: "Topik riset tambahan yang tidak termasuk tema utama akan dikumpulkan di sini."
+    topics: { en: [], id: [] }

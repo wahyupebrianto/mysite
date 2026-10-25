@@ -1,0 +1,55 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- include visible-posts.html -%}
+{%- assign profile = site.data.profile -%}
+<section class="hero" aria-labelledby="hero-name">
+  <img class="hero-photo" src="{{ profile.photo | relative_url }}" width="{{ profile.photo_width }}" height="{{ profile.photo_height }}" alt="{{ profile.photo_alt[lang] }}" fetchpriority="high">
+  <div class="hero-text">
+    <h1 id="hero-name">{{ profile.name }}</h1>
+    <p class="hero-role">{{ profile.role[lang] }}</p>
+    <p class="hero-affiliation">{{ profile.affiliation[lang] }}</p>
+    {% include social.html %}
+    {%- if profile.cv and profile.cv != "" %}
+    <p><a class="button" href="{{ profile.cv | relative_url }}">{{ t.download_cv }}</a></p>
+    {%- endif %}
+  </div>
+</section>
+
+<div class="home-grid">
+  <section class="prose bio">
+    {%- for para in profile.bio[lang] %}
+    {{ para | markdownify }}
+    {%- endfor %}
+    {{ content }}
+    <p><a href="{{ lang_prefix | append: '/about/goals/' | relative_url }}">{{ t.goals_link }} &rarr;</a></p>
+  </section>
+
+  <aside class="home-side">
+    <section aria-labelledby="kw-title">
+      <h2 id="kw-title" class="section-title">{{ t.keywords }}</h2>
+      {%- for group in profile.keywords %}
+      <ul class="chips">
+        {%- for kw in group %}
+        <li><a href="{{ kw.url }}" rel="noopener">{{ kw.name }}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- endfor %}
+    </section>
+
+    <section aria-labelledby="latest-title">
+      <h2 id="latest-title" class="section-title">{{ t.latest_posts }}</h2>
+      {%- if visible_posts.size > 0 %}
+      <ul class="post-list compact">
+        {%- for p in visible_posts limit: 3 %}
+        {% include post-item.html post=p %}
+        {%- endfor %}
+      </ul>
+      <p><a href="{{ lang_prefix | append: '/blog/' | relative_url }}">{{ t.all_posts }} &rarr;</a></p>
+      {%- else %}
+      <p class="muted">{{ t.no_posts }}</p>
+      {%- endif %}
+    </section>
+  </aside>
+</div>

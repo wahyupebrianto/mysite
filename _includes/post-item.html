@@ -1,0 +1,14 @@
+{%- comment -%} One entry of a post list. Usage: {% include post-item.html post=p %} {%- endcomment -%}
+{%- include i18n.html -%}
+<li class="post-item" data-categories="|{{ include.post.categories | join: '|' }}|">
+  <h3 class="post-item-title"><a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a></h3>
+  <p class="post-meta">
+    <time datetime="{{ include.post.date | date_to_xmlschema }}">{% include date-fmt.html date=include.post.date %}</time>
+    {%- if include.post.categories.size > 0 %} · {{ include.post.categories | join: ", " }}{% endif %}
+    {%- if include.post.lang != lang %} <span class="badge" lang="{{ include.post.lang }}">{{ t.post_language[include.post.lang] }}</span>{% endif %}
+  </p>
+  {%- assign item_desc = include.post.description | default: include.post.excerpt | strip_html | normalize_whitespace -%}
+  {%- if item_desc != "" %}
+  <p class="post-item-desc">{{ item_desc | truncate: 220 }}</p>
+  {%- endif %}
+</li>

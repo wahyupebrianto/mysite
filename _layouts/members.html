@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- assign members = site.data.members -%}
+{%- assign total = members.current.size | plus: members.alumni.size -%}
+{%- assign levels = "master,undergraduate" | split: "," -%}
+<div class="page prose">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {{ content }}
+  {%- if total == 0 %}
+  <p class="notice">{{ t.coming_soon_text }}</p>
+  {%- else -%}
+    {%- assign sections = "current,alumni" | split: "," -%}
+    {%- for section in sections -%}
+      {%- assign list = members[section] -%}
+      {%- if list.size > 0 %}
+  <h2>{{ t.member_sections[section] }}</h2>
+        {%- for level in levels -%}
+          {%- assign group = list | where: "level", level -%}
+          {%- if group.size > 0 %}
+  <h3>{{ t.levels[level] }}</h3>
+  <ul>
+            {%- for m in group %}
+    <li><strong>{{ m.name }}</strong>{% if m.topic %} – <em>{{ m.topic }}</em>{% endif %}{% if m.years %} ({{ m.years }}){% endif %}{% if m.note %}<br>{{ m.note }}{% endif %}</li>
+            {%- endfor %}
+  </ul>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif %}
+</div>

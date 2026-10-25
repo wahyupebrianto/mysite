@@ -1,0 +1,73 @@
+# Build the Jekyll site in this PRIVATE repo and publish only the generated
+# HTML to the PUBLIC repo (wahyupebrianto/wahyupebrianto.github.io).
+# Setup instructions: README.md -> "Deploy: private repo -> public repo".
+name: Build and publish
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  PUBLIC_REPO: wahyupebrianto/wahyupebrianto.github.io
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby (version from .ruby-version) and install gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check internal links, images and scripts
+        run: bundle exec htmlproofer ./_site --disable-external --no-enforce-https
+
+      - name: Upload built site
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    needs: build
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download built site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+
+      - name: Publish to the public repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.PUBLIC_REPO_DEPLOY_KEY }}
+          external_repository: ${{ env.PUBLIC_REPO }}
+          publish_branch: ${{ vars.PUBLIC_REPO_BRANCH || 'main' }}
+          publish_dir: ./_site
+          # One fresh commit each time: the public repo never contains history
+          # of drafts, removed files or source.
+          force_orphan: true
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy site"
